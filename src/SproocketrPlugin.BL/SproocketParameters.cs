@@ -9,11 +9,11 @@
     {
         #region Constants
 
-        public const double MIN_OUTER_DIAMETER = 500;
-        public const double MAX_OUTER_DIAMETER = 50;
+        public const double MIN_OUTER_DIAMETER = 50;
+        public const double MAX_OUTER_DIAMETER = 500;
 
-        public const double MIN_INNER_DIAMETER = 250;
-        public const double MAX_INNER_DIAMETER = 25;
+        public const double MIN_INNER_DIAMETER = 25;
+        public const double MAX_INNER_DIAMETER = 250;
 
         public const double MIN_THICKNESS = 5;
         public const double MAX_THICKNESS = 50;
@@ -47,7 +47,7 @@
         /// <summary>
         /// Колличество зубьев.
         /// </summary>
-        private double _toothCount;
+        private int _toothCount;
 
         /// <summary>
         /// Высота зуба.
@@ -118,7 +118,7 @@
         /// <summary>
         /// Количество зубьев.
         /// </summary>
-        public double ToothCount
+        public int ToothCount
         {
             get => _toothCount;
             set
@@ -162,10 +162,10 @@
         /// </summary>
         public SproocketParameters()
         {
-            OuterDiameter = 60;
-            InnerDiameter = 30;
-            Thickness = 10;
-            ToothCount = 10;
+            OuterDiameter = 80;
+            InnerDiameter = 45;
+            Thickness = 12;
+            ToothCount = 15;
             ToothHeight = 10;
         }
 

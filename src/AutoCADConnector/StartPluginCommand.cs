@@ -15,7 +15,7 @@ namespace AutoCADConnector
         /// <summary>
         /// Команда для запуска плагина.
         /// </summary>
-        [CommandMethod("BuildSproocket", CommandFlags.Modal)]
+        [CommandMethod("CreateSproocket", CommandFlags.Modal)]
         public void StartCommand()
         {
             Application.ShowModelessDialog(new MainForm());

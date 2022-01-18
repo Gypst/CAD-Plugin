@@ -74,6 +74,7 @@
             this.BuildBtn.Text = "Построить";
             this.BuildBtn.UseVisualStyleBackColor = true;
             this.BuildBtn.Click += new System.EventHandler(this.BuildBtn_Click);
+            this.BuildBtn.TabIndex = 6;
             // 
             // Schema
             // 
@@ -102,7 +103,8 @@
             this.ToothCountTextBox.Location = new System.Drawing.Point(17, 208);
             this.ToothCountTextBox.Name = "ToothCountTextBox";
             this.ToothCountTextBox.Size = new System.Drawing.Size(56, 21);
-            this.ToothCountTextBox.TabIndex = 80;
+            this.ToothCountTextBox.TabIndex = 5;
+            this.ToothCountTextBox.Leave += new System.EventHandler(this.OnTextBoxLeave);
             // 
             // MinMaxToothCountLabel
             // 
@@ -146,11 +148,13 @@
             // 
             // ThicknessTextBox
             // 
+            this.ThicknessTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.ThicknessTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.ThicknessTextBox.Location = new System.Drawing.Point(17, 123);
             this.ThicknessTextBox.Name = "ThicknessTextBox";
             this.ThicknessTextBox.Size = new System.Drawing.Size(56, 21);
-            this.ThicknessTextBox.TabIndex = 89;
+            this.ThicknessTextBox.TabIndex = 3;
+            this.ThicknessTextBox.Leave += new System.EventHandler(this.OnTextBoxLeave);
             // 
             // MinMaxToothTgicknessLabel
             // 
@@ -189,7 +193,8 @@
             this.InnerDiameterTextBox.Location = new System.Drawing.Point(17, 81);
             this.InnerDiameterTextBox.Name = "InnerDiameterTextBox";
             this.InnerDiameterTextBox.Size = new System.Drawing.Size(56, 21);
-            this.InnerDiameterTextBox.TabIndex = 85;
+            this.InnerDiameterTextBox.TabIndex = 2;
+            this.InnerDiameterTextBox.Leave += new System.EventHandler(this.OnTextBoxLeave);
             // 
             // OuterDiameterTextBox
             // 
@@ -198,7 +203,8 @@
             this.OuterDiameterTextBox.Location = new System.Drawing.Point(17, 39);
             this.OuterDiameterTextBox.Name = "OuterDiameterTextBox";
             this.OuterDiameterTextBox.Size = new System.Drawing.Size(56, 21);
-            this.OuterDiameterTextBox.TabIndex = 84;
+            this.OuterDiameterTextBox.TabIndex = 1;
+            this.OuterDiameterTextBox.Leave += new System.EventHandler(this.OnTextBoxLeave);
             // 
             // MinMaxOuterDiameterLabel
             // 
@@ -227,7 +233,8 @@
             this.ToothHeightTextBox.Location = new System.Drawing.Point(17, 165);
             this.ToothHeightTextBox.Name = "ToothHeightTextBox";
             this.ToothHeightTextBox.Size = new System.Drawing.Size(56, 21);
-            this.ToothHeightTextBox.TabIndex = 91;
+            this.ToothHeightTextBox.TabIndex = 4;
+            this.ToothHeightTextBox.Leave += new System.EventHandler(this.OnTextBoxLeave);
             // 
             // MainForm
             // 
