@@ -2,6 +2,8 @@
 {
     using Autodesk.AutoCAD.ApplicationServices;
     using Autodesk.AutoCAD.DatabaseServices;
+    using Autodesk.AutoCAD.EditorInput;
+    using Autodesk.AutoCAD.Runtime;
     using Autodesk.AutoCAD.Geometry;
 
     using BL;
@@ -88,7 +90,7 @@
         }
 
         /// <summary>
-        /// Строит модель.
+        /// Строит модель зубчатого колеса.
         /// </summary>
         public void Build()
         {
@@ -134,18 +136,9 @@
 
                     // Создание зуба.
                     var tooth = CreateTooth(toothHeight, thickness);
-                    //TODO: поворот зуба на 90 градусов от перпендикулярной оси в центре радиуса body
-
-                    //Matrix3d rotationXMatrix = Matrix3d.Rotation(Math.PI / -2, Vector3d.XAxis, Point3d.Origin);
-                    //tooth.TransformBy(rotationXMatrix);
+                    //Поворот зуба
                     Matrix3d rotationYMatrix = Matrix3d.Rotation(Math.PI / 2, Vector3d.YAxis, Point3d.Origin);
                     tooth.TransformBy(rotationYMatrix);
-
-                    //Vector3d vRot = new Point3d(outerRadius, outerRadius, 0).
-                    //    GetVectorTo(new Point3d(outerRadius, outerRadius, thickness));
-                    //tooth.TransformBy(Matrix3d.Rotation(1.5708, vRot, 
-                    //    new Point3d(outerRadius, outerRadius, 0)));
-
                     tooth.TransformBy(Matrix3d.Displacement(
                         new Point3d(outerRadius + toothHeight / 2, 0, thickness / 2)
                         - Point3d.Origin));
@@ -178,7 +171,7 @@
         }
 
         /// <summary>
-        /// Создает объект-заготовку <see cref="Solid3d"/> цепного колеса (без зубьев).
+        /// Создает тело <see cref="Solid3d"/> цепного колеса (заготовка без зубьев).
         /// </summary>
         /// <param name="outerRadius">Внешний радиус цепного колеса.</param>
         /// <param name="innerRadius">Внутренний радиус цепного колеса.</param>
@@ -191,11 +184,13 @@
             body.SetDatabaseDefaults();
             body.CreateFrustum(thickness, outerRadius, 
                 outerRadius, outerRadius);
-            //TODO: Теперь в шайбе надо сделать отверстие with innerRadius
-            //var innerBody = new Solid3d();
-            //innerBody.SetDatabaseDefaults();
-            //innerBody.CreateFrustum(thickness, innerRadius,
-            //    innerRadius, innerRadius);
+            // Создаём отверстие под вал
+            var innerBody = new Solid3d();
+            innerBody.SetDatabaseDefaults();
+            innerBody.CreateFrustum(thickness, innerRadius,
+                innerRadius, innerRadius);
+
+            body.BooleanOperation(BooleanOperationType.BoolSubtract, innerBody);
 
             return body;
         }
@@ -209,15 +204,14 @@
             double thickness)
         {
             int sidesNumber = 4;
-            double bottomRadius = thickness / 1.414216666666667;
-            double topRadius = bottomRadius / 2;
+            int topRadiusCoefficient = 2;
+            double thicknessCoefficient = 1.414216666666667;
+            double bottomRadius = thickness / thicknessCoefficient;
+            double topRadius = bottomRadius / topRadiusCoefficient;
 
-            //TODO: Сделать зубья вместо лепестков
             var model = new Solid3d();
             model.SetDatabaseDefaults();
             model.CreatePyramid(toothHeight, sidesNumber, bottomRadius, topRadius);
-            //model.CreateFrustum(toothHeight, thickness,
-            //    thickness, thickness);
 
             return model;
         }
