@@ -113,8 +113,16 @@
 
                 var propertyInfo = typeof(SproocketParameters).
                     GetProperty(propertyName);
-                propertyInfo.SetValue(_parameters, 
-                    double.Parse(textBox.Text));
+                if (propertyName == nameof(SproocketParameters.ToothCount))
+                {
+                    propertyInfo.SetValue(_parameters,
+                        int.Parse(textBox.Text));
+                }
+                else
+                {
+                    propertyInfo.SetValue(_parameters, 
+                        double.Parse(textBox.Text));
+                }
             }
             catch (Exception e)
             {

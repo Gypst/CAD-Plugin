@@ -18,8 +18,8 @@
         public const double MIN_THICKNESS = 5;
         public const double MAX_THICKNESS = 50;
 
-        public const double MIN_TOOTH_COUNT = 5;
-        public const double MAX_TOOTH_COUNT = 80;
+        public const int MIN_TOOTH_COUNT = 5;
+        public const int MAX_TOOTH_COUNT = 80;
 
         public const double MIN_TOOTH_HEIGHT = 1;
         //Высота зуба не больше 20% от диаметра.
@@ -165,7 +165,7 @@
             OuterDiameter = 80;
             InnerDiameter = 45;
             Thickness = 12;
-            ToothCount = 15;
+            ToothCount = 6;
             ToothHeight = 10;
         }
 

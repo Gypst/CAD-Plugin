@@ -128,11 +128,24 @@
                     // Создание заготовки звёздочки и смещение его на позицию 0, 0, 0.
                     var body = CreateSproocketBody(outerRadius, innerRadius,
                         thickness);
+
                     body.TransformBy(Matrix3d.Displacement(
                         new Point3d(0, 0, thickness / 2) - Point3d.Origin));
 
                     // Создание зуба.
                     var tooth = CreateTooth(toothHeight, thickness);
+                    //TODO: поворот зуба на 90 градусов от перпендикулярной оси в центре радиуса body
+
+                    //Matrix3d rotationXMatrix = Matrix3d.Rotation(Math.PI / -2, Vector3d.XAxis, Point3d.Origin);
+                    //tooth.TransformBy(rotationXMatrix);
+                    Matrix3d rotationYMatrix = Matrix3d.Rotation(Math.PI / 2, Vector3d.YAxis, Point3d.Origin);
+                    tooth.TransformBy(rotationYMatrix);
+
+                    //Vector3d vRot = new Point3d(outerRadius, outerRadius, 0).
+                    //    GetVectorTo(new Point3d(outerRadius, outerRadius, thickness));
+                    //tooth.TransformBy(Matrix3d.Rotation(1.5708, vRot, 
+                    //    new Point3d(outerRadius, outerRadius, 0)));
+
                     tooth.TransformBy(Matrix3d.Displacement(
                         new Point3d(outerRadius + toothHeight / 2, 0, thickness / 2)
                         - Point3d.Origin));
@@ -179,6 +192,10 @@
             body.CreateFrustum(thickness, outerRadius, 
                 outerRadius, outerRadius);
             //TODO: Теперь в шайбе надо сделать отверстие with innerRadius
+            //var innerBody = new Solid3d();
+            //innerBody.SetDatabaseDefaults();
+            //innerBody.CreateFrustum(thickness, innerRadius,
+            //    innerRadius, innerRadius);
 
             return body;
         }
@@ -191,11 +208,16 @@
         private Solid3d CreateTooth(double toothHeight, 
             double thickness)
         {
+            int sidesNumber = 4;
+            double bottomRadius = thickness / 1.414216666666667;
+            double topRadius = bottomRadius / 2;
+
             //TODO: Сделать зубья вместо лепестков
             var model = new Solid3d();
             model.SetDatabaseDefaults();
-            model.CreateFrustum(toothHeight, thickness,
-                thickness, thickness);
+            model.CreatePyramid(toothHeight, sidesNumber, bottomRadius, topRadius);
+            //model.CreateFrustum(toothHeight, thickness,
+            //    thickness, thickness);
 
             return model;
         }
