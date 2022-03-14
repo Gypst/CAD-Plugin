@@ -63,7 +63,7 @@
             ToothHeightTextBox.Text = _parameters.ToothHeight.ToString();
             ToothCountTextBox.Text  = _parameters.ToothCount.ToString();
 
-            ChangeMinMaxHeightLabel();
+            ChangeMinMaxToothHeightLabel();
         }
 
         /// <summary>
@@ -82,22 +82,40 @@
 
             if (parameterName == nameof(SproocketParameters.OuterDiameter))
             {
-                ChangeMinMaxHeightLabel();
+                ChangeMinMaxToothCountLabel();
+                ChangeMinMaxToothHeightLabel();
+                ChangeMinMaxInnerDiameterLabel();
             }
 
-            if (parameterName == nameof(SproocketParameters.ToothCount))
-            {
-                CheckValueInAllTextBox();
-            }
+            CheckValueInAllTextBox();
         }
 
         /// <summary>
         /// Изменение отображаемого значения min/max у высоты зуба.
         /// </summary>
-        private void ChangeMinMaxHeightLabel()
+        private void ChangeMinMaxToothCountLabel()
+        {
+            MinMaxToothCountLabel.Text = "(5 - " + (_parameters.OuterDiameter *
+                SproocketParameters.MAX_TOOTH_COUNT_FROM_OUTER_DIAMETER).ToString() + " мм)";
+        }
+
+        /// <summary>
+        /// Изменение отображаемого значения min/max у высоты зуба.
+        /// </summary>
+        private void ChangeMinMaxToothHeightLabel()
         {
             MinMaxToothHeightLabel.Text = "(До " + (_parameters.OuterDiameter *
-                SproocketParameters.MAX_TOOTH_HEIGHT_MULTIPLIER).ToString() + " мм)";
+                SproocketParameters.MAX_INNER_FROM_OUTER_DIAMETER_MULTIPLIER).ToString() + " мм)";
+        }
+
+        /// <summary>
+        /// Изменение отображаемого значения min/max у внутреннего радиуса.
+        /// </summary>
+        private void ChangeMinMaxInnerDiameterLabel()
+        {
+            MinMaxInnerDiameter.Text = "(25 - " + (_parameters.OuterDiameter * 
+                SproocketParameters.MAX_INNER_FROM_OUTER_DIAMETER_MULTIPLIER)
+                 + " мм)";
         }
 
         /// <summary>
