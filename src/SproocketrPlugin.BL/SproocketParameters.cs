@@ -7,6 +7,7 @@
     /// </summary>
     public class SproocketParameters
     {
+        
         #region Constants
 
         public const double MIN_OUTER_DIAMETER = 50;
@@ -128,15 +129,18 @@
             get => _toothCount;
             set
             {
-                if (!Validator.ValidateValue(MIN_TOOTH_COUNT,
+                if (Validator.ValidateValue(MIN_TOOTH_COUNT,
                     OuterDiameter * MAX_TOOTH_COUNT_FROM_OUTER_DIAMETER, value) && 
-                    !Validator.ValidateValue(MIN_TOOTH_COUNT, MAX_TOOTH_COUNT, value))
+                    Validator.ValidateValue(MIN_TOOTH_COUNT, MAX_TOOTH_COUNT, value))
+                {
+                    _toothCount = value;
+
+                } else
                 {
                     throw new ArgumentException("Введено неверное "
                         + "значение количества зубьев.");
                 }
 
-                _toothCount = value;
             }
         }
 
