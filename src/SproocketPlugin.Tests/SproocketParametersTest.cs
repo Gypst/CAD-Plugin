@@ -48,15 +48,16 @@
         [TestCase(5, nameof(SproocketParameters.ToothCount),
                   TestName = "Проверка Get и Set для ToothCount при значении " +
                              "равному граничному минимальному")]
-        [TestCase(50, nameof(SproocketParameters.ToothCount),
+        [TestCase(10, nameof(SproocketParameters.ToothCount),
                   TestName = "Проверка Get и Set для ToothCount при значении " +
                              "равному определенному выражению в границе допустимых значений")]
-        [TestCase(80, nameof(SproocketParameters.ToothCount),
+        [TestCase(30, nameof(SproocketParameters.ToothCount),
                   TestName = "Проверка Get и Set для ToothCount при значении " +
                              "равному граничному максимальному")]
         public void AnyParameter_GetSetValue_Success(int expectedValue, string parameterName)
         {
             SproocketParameters sprocketParameters = new SproocketParameters();
+            sprocketParameters.OuterDiameter = 500;
 
             var propertyInfo = typeof(SproocketParameters).
                 GetProperty(parameterName);
