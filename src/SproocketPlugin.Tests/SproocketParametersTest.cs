@@ -34,16 +34,27 @@
         [TestCase(50, nameof(SproocketParameters.Thickness), 
             TestName = "Проверка Get и Set для Thickness при " + 
             "значении равному максимальному")]
-        [TestCase(5, nameof(SproocketParameters.ToothCount), 
-            TestName = "Проверка Get и Set для ToothCount при значении " + 
-            "равному граничному минимальному")]
-        [TestCase(50, nameof(SproocketParameters.ToothCount), 
-            TestName = "Проверка Get и Set для ToothCount при значении " + 
-            "равному определенному выражению в границе допустимых значений")]
-        [TestCase(80, nameof(SproocketParameters.ToothCount), 
-            TestName = "Проверка Get и Set для ToothCount при значении " + 
-            "равному граничному максимальному")]
         public void AnyParameter_GetSetValue_Success(double expectedValue, string parameterName)
+        {
+            SproocketParameters sprocketParameters = new SproocketParameters();
+
+            var propertyInfo = typeof(SproocketParameters).
+                GetProperty(parameterName);
+            propertyInfo.SetValue(sprocketParameters, expectedValue);
+
+            Assert.AreEqual(expectedValue, propertyInfo.GetValue(sprocketParameters));
+        }
+
+        [TestCase(5, nameof(SproocketParameters.ToothCount),
+                  TestName = "Проверка Get и Set для ToothCount при значении " +
+                             "равному граничному минимальному")]
+        [TestCase(50, nameof(SproocketParameters.ToothCount),
+                  TestName = "Проверка Get и Set для ToothCount при значении " +
+                             "равному определенному выражению в границе допустимых значений")]
+        [TestCase(80, nameof(SproocketParameters.ToothCount),
+                  TestName = "Проверка Get и Set для ToothCount при значении " +
+                             "равному граничному максимальному")]
+        public void AnyParameter_GetSetValue_Success(int expectedValue, string parameterName)
         {
             SproocketParameters sprocketParameters = new SproocketParameters();
 
@@ -72,13 +83,25 @@
         [TestCase(150, nameof(SproocketParameters.Thickness),
                   TestName = "Проверка Get и Set для Thickness при " +
                              "значении больше максимального")]
+        public void AnyParameter_SetValue_Failed(double value, string parameterName)
+        {
+            SproocketParameters sprocketParameters = new SproocketParameters();
+            var propertyInfo = typeof(SproocketParameters).
+                GetProperty(parameterName);
+
+            Assert.Throws<TargetInvocationException>(() =>
+            {
+                propertyInfo.SetValue(sprocketParameters, value);
+            });
+        }
+
         [TestCase(2, nameof(SproocketParameters.ToothCount),
-            TestName = "Проверка Get и Set для ToothCount при значении " +
-                            "равному меньше минимального")]
+                  TestName = "Проверка Get и Set для ToothCount при значении " +
+                             "равному меньше минимального")]
         [TestCase(150, nameof(SproocketParameters.ToothCount),
                   TestName = "Проверка Get и Set для ToothCount при значении " +
                              "равному больше максимального")]
-        public void AnyParameter_SetValue_Failed(double value, string parameterName)
+        public void AnyParameter_SetValue_Failed(int value, string parameterName)
         {
             SproocketParameters sprocketParameters = new SproocketParameters();
             var propertyInfo = typeof(SproocketParameters).
