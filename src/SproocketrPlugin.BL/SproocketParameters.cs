@@ -90,7 +90,8 @@
             set
             {
                 if (!Validator.ValidateValue(MIN_INNER_DIAMETER,
-                    MAX_INNER_FROM_OUTER_DIAMETER_MULTIPLIER * OuterDiameter, value))
+                    MAX_INNER_FROM_OUTER_DIAMETER_MULTIPLIER * OuterDiameter, value) &&
+                    !Validator.ValidateValue(MIN_INNER_DIAMETER, MAX_INNER_DIAMETER, value))
                 {
                     throw new ArgumentException("Введено неверное "
                         + "значение внутреннего диаметра.");
@@ -128,7 +129,8 @@
             set
             {
                 if (!Validator.ValidateValue(MIN_TOOTH_COUNT,
-                    OuterDiameter * MAX_TOOTH_COUNT_FROM_OUTER_DIAMETER, value))
+                    OuterDiameter * MAX_TOOTH_COUNT_FROM_OUTER_DIAMETER, value) && 
+                    !Validator.ValidateValue(MIN_TOOTH_COUNT, MAX_TOOTH_COUNT, value))
                 {
                     throw new ArgumentException("Введено неверное "
                         + "значение количества зубьев.");
@@ -147,7 +149,7 @@
             set
             {
                 if (!Validator.ValidateValue(MIN_TOOTH_HEIGHT,
-                    OuterDiameter * MAX_INNER_FROM_OUTER_DIAMETER_MULTIPLIER, value))
+                    OuterDiameter * MAX_TOOTH_HEIGHT_FROM_OUTER_DIAMETER, value))
                 {
                     throw new ArgumentException("Введено неверное "
                         + "значение высоты зуба.");
