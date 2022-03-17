@@ -19,7 +19,7 @@
         public const double MAX_THICKNESS = 50;
 
         public const int MIN_TOOTH_COUNT = 5;
-        public const int MAX_TOOTH_COUNT = 80;
+        public const int MAX_TOOTH_COUNT = 30;
 
         public const double MIN_TOOTH_HEIGHT = 1;
         //Высота зуба не больше 20% от диаметра.

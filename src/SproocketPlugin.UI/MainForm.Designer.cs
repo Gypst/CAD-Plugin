@@ -70,11 +70,10 @@
             this.BuildBtn.Location = new System.Drawing.Point(78, 246);
             this.BuildBtn.Name = "BuildBtn";
             this.BuildBtn.Size = new System.Drawing.Size(95, 23);
-            this.BuildBtn.TabIndex = 74;
+            this.BuildBtn.TabIndex = 6;
             this.BuildBtn.Text = "Построить";
             this.BuildBtn.UseVisualStyleBackColor = true;
             this.BuildBtn.Click += new System.EventHandler(this.BuildBtn_Click);
-            this.BuildBtn.TabIndex = 6;
             // 
             // Schema
             // 
@@ -114,7 +113,7 @@
             this.MinMaxToothCountLabel.Name = "MinMaxToothCountLabel";
             this.MinMaxToothCountLabel.Size = new System.Drawing.Size(65, 15);
             this.MinMaxToothCountLabel.TabIndex = 81;
-            this.MinMaxToothCountLabel.Text = "(5 - 80 шт)";
+            this.MinMaxToothCountLabel.Text = "(5 - 30 шт)";
             // 
             // ToothHeightLabel
             // 
@@ -132,9 +131,9 @@
             this.MinMaxToothHeightLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.MinMaxToothHeightLabel.Location = new System.Drawing.Point(92, 168);
             this.MinMaxToothHeightLabel.Name = "MinMaxToothHeightLabel";
-            this.MinMaxToothHeightLabel.Size = new System.Drawing.Size(118, 15);
+            this.MinMaxToothHeightLabel.Size = new System.Drawing.Size(145, 15);
             this.MinMaxToothHeightLabel.TabIndex = 78;
-            this.MinMaxToothHeightLabel.Text = "(до 20% диаметра)";
+            this.MinMaxToothHeightLabel.Text = "(от 1 до 20% диаметра)";
             // 
             // ThicknessLabel
             // 

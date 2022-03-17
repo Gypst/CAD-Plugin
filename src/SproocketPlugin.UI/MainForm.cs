@@ -96,7 +96,7 @@
         private void ChangeMinMaxToothCountLabel()
         {
             MinMaxToothCountLabel.Text = "(5 - " + (_parameters.OuterDiameter *
-                SproocketParameters.MAX_TOOTH_COUNT_FROM_OUTER_DIAMETER).ToString() + " мм)";
+                SproocketParameters.MAX_TOOTH_COUNT_FROM_OUTER_DIAMETER).ToString() + " шт)";
         }
 
         /// <summary>
