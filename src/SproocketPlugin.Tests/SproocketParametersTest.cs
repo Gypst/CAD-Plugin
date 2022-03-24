@@ -75,13 +75,16 @@
         [TestCase(5, nameof(SproocketParameters.InnerDiameter),
             TestName = "Проверка Get и Set для InnerDiameter при" +
             " значении меньше минимального")]
-        [TestCase(350, nameof(SproocketParameters.InnerDiameter),
+        [TestCase(500, nameof(SproocketParameters.InnerDiameter),
                   TestName = "Проверка Get и Set для InnerDiameter при значении " +
                              "больше максимального")]
         [TestCase(2, nameof(SproocketParameters.Thickness),
             TestName = "Проверка Get и Set для Thickness при " +
             "значении меньше минимального")]
         [TestCase(150, nameof(SproocketParameters.Thickness),
+                  TestName = "Проверка Get и Set для Thickness при " +
+                             "значении больше максимального")]
+        [TestCase(100, nameof(SproocketParameters.ToothHeight),
                   TestName = "Проверка Get и Set для Thickness при " +
                              "значении больше максимального")]
         public void AnyParameter_SetValue_Failed(double value, string parameterName)

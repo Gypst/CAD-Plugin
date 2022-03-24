@@ -69,6 +69,7 @@
       <Private>False</Private>
       <HintPath>C:\Autodesk\AutoCAD libs\AcMgd.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
     <!--ACA References Begin-->
     <!--ACA Refences End-->
     <!--AME Referebces Begin-->
@@ -108,9 +109,17 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\SproocketPlugin.Builder\SproocketPlugin.Builder.csproj">
+      <Project>{34103dae-18cc-4492-b2ae-e9f18d892c1b}</Project>
+      <Name>SproocketPlugin.Builder</Name>
+    </ProjectReference>
     <ProjectReference Include="..\SproocketPlugin.UI\SproocketPlugin.UI.csproj">
       <Project>{ab489376-a1f9-43b1-bd46-35369e849795}</Project>
       <Name>SproocketPlugin.UI</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SproocketrPlugin.BL\SproocketPlugin.BL.csproj">
+      <Project>{08ca8ab3-1b8d-48c1-8589-7aa7a7f0cdb2}</Project>
+      <Name>SproocketPlugin.BL</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
