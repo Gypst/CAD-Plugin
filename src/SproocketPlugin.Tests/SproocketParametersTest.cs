@@ -34,6 +34,15 @@
         [TestCase(50, nameof(SproocketParameters.Thickness), 
             TestName = "Проверка Get и Set для Thickness при " + 
             "значении равному максимальному")]
+        [TestCase(1, nameof(SproocketParameters.ToothHeight),
+                  TestName = "Проверка Get и Set для ToothHeight при " +
+            "значении равному минимальному")]
+        [TestCase(10, nameof(SproocketParameters.ToothHeight),
+                  TestName = "Проверка Get и Set для ToothHeight при " +
+            "значении равному определенному выражению в границе допустимых значений")]
+        [TestCase(16, nameof(SproocketParameters.ToothHeight),
+                  TestName = "Проверка Get и Set для ToothHeight при " +
+            "значении равному максимальному")]
         public void AnyParameter_GetSetValue_Success(double expectedValue, string parameterName)
         {
             SproocketParameters sprocketParameters = new SproocketParameters();
