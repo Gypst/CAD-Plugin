@@ -84,6 +84,9 @@
         [TestCase(150, nameof(SproocketParameters.Thickness),
                   TestName = "Проверка Get и Set для Thickness при " +
                              "значении больше максимального")]
+        [TestCase(0, nameof(SproocketParameters.ToothHeight),
+                  TestName = "Проверка Get и Set для Thickness при " +
+                             "значении меньше минимального")]
         [TestCase(100, nameof(SproocketParameters.ToothHeight),
                   TestName = "Проверка Get и Set для Thickness при " +
                              "значении больше максимального")]
@@ -118,7 +121,7 @@
         }
 
         [TestCase(TestName = "Проверка корректности создания объекта " +
-            "используя конструткор по умолчанию")]
+            "используя конструктор по умолчанию")]
         public void Constructor_CorrectCreation_Success()
         {
             var expectedOuterDiameter = 80;
