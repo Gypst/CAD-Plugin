@@ -57,17 +57,17 @@
     <Reference Include="AcCoreMgd">
       <SpecificVersion>False</SpecificVersion>
       <Private>False</Private>
-      <HintPath>C:\Autodesk\AutoCAD libs\AcCoreMgd.dll</HintPath>
+      <HintPath>..\libs\AutoCAD libs\AcCoreMgd.dll</HintPath>
     </Reference>
     <Reference Include="AcDbMgd">
       <SpecificVersion>False</SpecificVersion>
       <Private>False</Private>
-      <HintPath>C:\Autodesk\AutoCAD libs\AcDbMgd.dll</HintPath>
+      <HintPath>..\libs\AutoCAD libs\AcDbMgd.dll</HintPath>
     </Reference>
     <Reference Include="AcMgd">
       <SpecificVersion>False</SpecificVersion>
       <Private>False</Private>
-      <HintPath>C:\Autodesk\AutoCAD libs\AcMgd.dll</HintPath>
+      <HintPath>..\libs\AutoCAD libs\AcMgd.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.VisualBasic" />
     <!--ACA References Begin-->

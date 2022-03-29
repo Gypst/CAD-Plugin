@@ -32,13 +32,19 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="AcCoreMgd">
-      <HintPath>C:\Autodesk\AutoCAD libs\AcCoreMgd.dll</HintPath>
+      <HintPath>..\libs\AutoCAD libs\AcCoreMgd.dll</HintPath>
+    </Reference>
+    <Reference Include="AcCui">
+      <HintPath>..\libs\AutoCAD libs\AcCui.dll</HintPath>
     </Reference>
     <Reference Include="AcDbMgd">
-      <HintPath>C:\Autodesk\AutoCAD libs\AcDbMgd.dll</HintPath>
+      <HintPath>..\libs\AutoCAD libs\AcDbMgd.dll</HintPath>
+    </Reference>
+    <Reference Include="AcDx">
+      <HintPath>..\libs\AutoCAD libs\AcDx.dll</HintPath>
     </Reference>
     <Reference Include="AcMgd">
-      <HintPath>C:\Autodesk\AutoCAD libs\AcMgd.dll</HintPath>
+      <HintPath>..\libs\AutoCAD libs\AcMgd.dll</HintPath>
     </Reference>
     <Reference Include="AdWindows">
       <HintPath>C:\Autodesk\ObjectARX_for_AutoCAD_2022_Win_64bit_dlm\inc\AdWindows.dll</HintPath>
