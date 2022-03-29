@@ -49,6 +49,9 @@
             this.MinMaxOuterDiameterLabel = new System.Windows.Forms.Label();
             this.MinMaxInnerDiameter = new System.Windows.Forms.Label();
             this.ToothHeightTextBox = new System.Windows.Forms.TextBox();
+            this.ToothTopRadiusRatioLabel = new System.Windows.Forms.Label();
+            this.ToothTopRadiusRatioTextBox = new System.Windows.Forms.TextBox();
+            this.MinMaxToothTopRadiusRatioLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Schema)).BeginInit();
             this.SuspendLayout();
@@ -67,7 +70,7 @@
             // 
             this.BuildBtn.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.BuildBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.BuildBtn.Location = new System.Drawing.Point(78, 246);
+            this.BuildBtn.Location = new System.Drawing.Point(78, 292);
             this.BuildBtn.Name = "BuildBtn";
             this.BuildBtn.Size = new System.Drawing.Size(95, 23);
             this.BuildBtn.TabIndex = 6;
@@ -235,12 +238,46 @@
             this.ToothHeightTextBox.TabIndex = 4;
             this.ToothHeightTextBox.Leave += new System.EventHandler(this.OnTextBoxLeave);
             // 
+            // ToothTopRadiusRatioLabel
+            // 
+            this.ToothTopRadiusRatioLabel.AutoSize = true;
+            this.ToothTopRadiusRatioLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ToothTopRadiusRatioLabel.Location = new System.Drawing.Point(12, 241);
+            this.ToothTopRadiusRatioLabel.Name = "ToothTopRadiusRatioLabel";
+            this.ToothTopRadiusRatioLabel.Size = new System.Drawing.Size(225, 15);
+            this.ToothTopRadiusRatioLabel.TabIndex = 92;
+            this.ToothTopRadiusRatioLabel.Text = "Коэффициент верхнего радиуса зуба";
+            // 
+            // ToothTopRadiusRatioTextBox
+            // 
+            this.ToothTopRadiusRatioTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ToothTopRadiusRatioTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ToothTopRadiusRatioTextBox.Location = new System.Drawing.Point(17, 258);
+            this.ToothTopRadiusRatioTextBox.Name = "ToothTopRadiusRatioTextBox";
+            this.ToothTopRadiusRatioTextBox.Size = new System.Drawing.Size(56, 21);
+            this.ToothTopRadiusRatioTextBox.TabIndex = 91;
+            this.ToothTopRadiusRatioTextBox.Leave += new System.EventHandler(this.OnTextBoxLeave);
+            // 
+            // MinMaxToothTopRadiusRatioLabel
+            // 
+            this.MinMaxToothTopRadiusRatioLabel.AutoSize = true;
+            this.MinMaxToothTopRadiusRatioLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.MinMaxToothTopRadiusRatioLabel.Location = new System.Drawing.Point(92, 260);
+            this.MinMaxToothTopRadiusRatioLabel.Name = "MinMaxToothTopRadiusRatioLabel";
+            this.MinMaxToothTopRadiusRatioLabel.Size = new System.Drawing.Size(59, 15);
+            this.MinMaxToothTopRadiusRatioLabel.TabIndex = 93;
+            this.MinMaxToothTopRadiusRatioLabel.Text = "(0,2 - 0,8)";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.ClientSize = new System.Drawing.Size(632, 284);
+            this.ClientSize = new System.Drawing.Size(632, 326);
+            this.Controls.Add(this.ToothTopRadiusRatioLabel);
+            this.Controls.Add(this.ToothTopRadiusRatioTextBox);
+            this.Controls.Add(this.MinMaxToothTopRadiusRatioLabel);
             this.Controls.Add(this.ToothHeightTextBox);
             this.Controls.Add(this.ThicknessLabel);
             this.Controls.Add(this.ThicknessTextBox);
@@ -259,9 +296,9 @@
             this.Controls.Add(this.Schema);
             this.Controls.Add(this.BuildBtn);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MaximumSize = new System.Drawing.Size(648, 323);
-            this.MinimumSize = new System.Drawing.Size(648, 323);
+            this.MaximizeBox = false;
             this.Name = "MainForm";
             this.Text = "Построение звёздочки";
             this.Load += new System.EventHandler(this.MainForm_Load);
@@ -292,6 +329,9 @@
         private System.Windows.Forms.Label ToothHeightLabel;
         private System.Windows.Forms.Label MinMaxToothHeightLabel;
         private System.Windows.Forms.TextBox ToothHeightTextBox;
+        private System.Windows.Forms.Label ToothTopRadiusRatioLabel;
+        private System.Windows.Forms.TextBox ToothTopRadiusRatioTextBox;
+        private System.Windows.Forms.Label MinMaxToothTopRadiusRatioLabel;
     }
 }
 

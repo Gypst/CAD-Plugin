@@ -19,6 +19,9 @@
         public const double MIN_THICKNESS = 5;
         public const double MAX_THICKNESS = 50;
 
+        public const double MIN_TOOTH_TOP_RADIUS_RATIO = 0.2;
+        public const double MAX_TOOTH_TOP_RADIUS_RATIO = 0.8;
+
         public const int MIN_TOOTH_COUNT = 5;
         public const int MAX_TOOTH_COUNT = 30;
 
@@ -58,6 +61,11 @@
         /// Высота зуба.
         /// </summary>
         private double _toothHeight;
+
+        /// <summary>
+        /// Коэффициент ширины верхнего радиуса от основания зуба
+        /// </summary>
+        private double _toothTopRadiusRatio;
 
         #endregion
 
@@ -158,7 +166,26 @@
                 throw new ArgumentException("Введено неверное "
                         + "значение высоты зуба.");
                 }
-                    _toothHeight = value;
+
+                _toothHeight = value;
+            }
+        }
+
+        /// <summary>
+        /// Коэффициент ширины верхнего радиуса от основания зуба.
+        /// </summary>
+        public double ToothTopRadiusRatio
+        {
+            get => _toothTopRadiusRatio;
+            set
+            {
+                if (!Validator.ValidateValue(MIN_TOOTH_TOP_RADIUS_RATIO, MAX_TOOTH_TOP_RADIUS_RATIO, value))
+                {
+                    throw new ArgumentException("Введено неверное "
+                                                + "значение коэффициента ширины верхнего радиуса.");
+                }
+
+                _toothTopRadiusRatio = value;
             }
         }
 
@@ -176,6 +203,7 @@
             Thickness = 12;
             ToothCount = 6;
             ToothHeight = 10;
+            ToothTopRadiusRatio = 0.5;
         }
 
         #endregion

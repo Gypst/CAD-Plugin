@@ -43,6 +43,7 @@
                 { ThicknessTextBox,     nameof(SproocketParameters.Thickness) },
                 { ToothHeightTextBox,   nameof(SproocketParameters.ToothHeight) },
                 { ToothCountTextBox,    nameof(SproocketParameters.ToothCount) },
+                { ToothTopRadiusRatioTextBox,    nameof(SproocketParameters.ToothTopRadiusRatio) },
             };
 
             InitState();
@@ -62,6 +63,7 @@
             ThicknessTextBox.Text   = _parameters.Thickness.ToString();
             ToothHeightTextBox.Text = _parameters.ToothHeight.ToString();
             ToothCountTextBox.Text  = _parameters.ToothCount.ToString();
+            ToothTopRadiusRatioTextBox.Text = _parameters.ToothTopRadiusRatio.ToString();
 
             ChangeMinMaxToothHeightLabel();
         }

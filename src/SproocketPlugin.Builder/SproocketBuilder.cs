@@ -122,8 +122,9 @@
                     double outerRadius  = _parameters.OuterDiameter / 2;
                     double innerRadius  = _parameters.InnerDiameter / 2;
                     double thickness    = _parameters.Thickness;
-                    int    toothCount   = _parameters.ToothCount;
                     double toothHeight  = _parameters.ToothHeight;
+                    double toothTopRadiusRatio = _parameters.ToothTopRadiusRatio;
+                    int    toothCount   = _parameters.ToothCount;
 
                     // Создание заготовки звёздочки и смещение его на позицию 0, 0, 0.
                     var body = CreateSproocketBody(outerRadius, innerRadius,
@@ -133,7 +134,7 @@
                         new Point3d(0, 0, thickness / 2) - Point3d.Origin));
 
                     // Создание зуба.
-                    var tooth = CreateTooth(toothHeight, thickness);
+                    var tooth = CreateTooth(toothHeight, thickness, toothTopRadiusRatio);
                     //Поворот зуба
                     Matrix3d rotationYMatrix = Matrix3d.Rotation(Math.PI / 2, Vector3d.YAxis, Point3d.Origin);
                     tooth.TransformBy(rotationYMatrix);
@@ -196,20 +197,22 @@
         /// <summary>
         /// Создает объект <see cref="Solid3d"/> зуб.
         /// </summary>
-        /// <param name="heigth">Высота элемента.</param>
+        /// <param name="heigth">Высота зуба.</param>
+        /// <param name="thickness">Толщина зуба.</param>
+        /// <param name="topRadiusCoefficient">Коэффициент ширины верхнего радиуса от основания зуба.
+        /// Значение по умолчанию равное 0.5, означает, что верхний радиус в два раза меньше основания.</param>
         /// <returns>Модель в виде <see cref="Solid3d"/>.</returns>
-        private Solid3d CreateTooth(double toothHeight, 
-            double thickness)
+        private Solid3d CreateTooth(double heigth, 
+            double thickness, double topRadiusCoefficient = 0.5)
         {
             int sidesNumber = 4;
-            int topRadiusCoefficient = 2;
             double thicknessCoefficient = 1.414216666666667;
             double bottomRadius = thickness / thicknessCoefficient;
-            double topRadius = bottomRadius / topRadiusCoefficient;
+            double topRadius = bottomRadius * topRadiusCoefficient;
 
             var model = new Solid3d();
             model.SetDatabaseDefaults();
-            model.CreatePyramid(toothHeight, sidesNumber, bottomRadius, topRadius);
+            model.CreatePyramid(heigth, sidesNumber, bottomRadius, topRadius);
 
             return model;
         }
