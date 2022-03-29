@@ -43,6 +43,15 @@
         [TestCase(16, nameof(SproocketParameters.ToothHeight),
                   TestName = "Проверка Get и Set для ToothHeight при " +
             "значении равному максимальному")]
+        [TestCase(0.2, nameof(SproocketParameters.ToothTopRadiusRatio),
+                  TestName = "Проверка Get и Set для ToothTopRadiusRatio при " +
+                             "значении равному минимальному")]
+        [TestCase(0.5, nameof(SproocketParameters.ToothTopRadiusRatio),
+                  TestName = "Проверка Get и Set для ToothTopRadiusRatio при " +
+                             "значении равному определенному выражению в границе допустимых значений")]
+        [TestCase(0.8, nameof(SproocketParameters.ToothTopRadiusRatio),
+                  TestName = "Проверка Get и Set для ToothTopRadiusRatio при " +
+                             "значении равному максимальному")]
         public void AnyParameter_GetSetValue_Success(double expectedValue, string parameterName)
         {
             SproocketParameters sprocketParameters = new SproocketParameters();
@@ -99,6 +108,12 @@
         [TestCase(100, nameof(SproocketParameters.ToothHeight),
                   TestName = "Проверка Get и Set для Thickness при " +
                              "значении больше максимального")]
+        [TestCase(0.1, nameof(SproocketParameters.ToothTopRadiusRatio),
+                  TestName = "Проверка Get и Set для ToothTopRadiusRatio при " +
+                             "значении меньше минимального")]
+        [TestCase(0.9, nameof(SproocketParameters.ToothTopRadiusRatio),
+                  TestName = "Проверка Get и Set для ToothTopRadiusRatio при " +
+                             "значении больше максимального")]
         public void AnyParameter_SetValue_Failed(double value, string parameterName)
         {
             SproocketParameters sprocketParameters = new SproocketParameters();
@@ -136,8 +151,9 @@
             var expectedOuterDiameter = 80;
             var expectedInnerDiameter = 45;
             var expectedThickness = 12;
-            var expectedToothCount = 6;
             var expectedToothHeight = 10;
+            var expectedToothCount = 6;
+            var expectedToothTopRadiusRatio = 0.5;
 
             SproocketParameters sprocketParameters = new SproocketParameters();
 
@@ -148,6 +164,7 @@
                 Assert.AreEqual(expectedThickness, sprocketParameters.Thickness);
                 Assert.AreEqual(expectedToothCount, sprocketParameters.ToothCount);
                 Assert.AreEqual(expectedToothHeight, sprocketParameters.ToothHeight);
+                Assert.AreEqual(expectedToothTopRadiusRatio, sprocketParameters.ToothTopRadiusRatio);
             });
         }
     }
