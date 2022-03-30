@@ -161,7 +161,7 @@
             set
             {
                 if (!Validator.ValidateValue(MIN_TOOTH_HEIGHT,
-                    OuterDiameter * MAX_TOOTH_HEIGHT_FROM_OUTER_DIAMETER, value) || value >= MAX_THICKNESS)
+                    OuterDiameter * MAX_TOOTH_HEIGHT_FROM_OUTER_DIAMETER, value))
                 {
                 throw new ArgumentException("Введено неверное "
                         + "значение высоты зуба.");
