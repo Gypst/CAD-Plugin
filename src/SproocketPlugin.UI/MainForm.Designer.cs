@@ -70,10 +70,10 @@
             // 
             this.BuildBtn.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.BuildBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.BuildBtn.Location = new System.Drawing.Point(78, 292);
+            this.BuildBtn.Location = new System.Drawing.Point(78, 285);
             this.BuildBtn.Name = "BuildBtn";
             this.BuildBtn.Size = new System.Drawing.Size(95, 23);
-            this.BuildBtn.TabIndex = 6;
+            this.BuildBtn.TabIndex = 7;
             this.BuildBtn.Text = "Построить";
             this.BuildBtn.UseVisualStyleBackColor = true;
             this.BuildBtn.Click += new System.EventHandler(this.BuildBtn_Click);
@@ -92,7 +92,7 @@
             // 
             this.ToothCountLabel.AutoSize = true;
             this.ToothCountLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.ToothCountLabel.Location = new System.Drawing.Point(12, 191);
+            this.ToothCountLabel.Location = new System.Drawing.Point(12, 185);
             this.ToothCountLabel.Name = "ToothCountLabel";
             this.ToothCountLabel.Size = new System.Drawing.Size(87, 15);
             this.ToothCountLabel.TabIndex = 79;
@@ -102,7 +102,7 @@
             // 
             this.ToothCountTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.ToothCountTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.ToothCountTextBox.Location = new System.Drawing.Point(17, 208);
+            this.ToothCountTextBox.Location = new System.Drawing.Point(17, 202);
             this.ToothCountTextBox.Name = "ToothCountTextBox";
             this.ToothCountTextBox.Size = new System.Drawing.Size(56, 21);
             this.ToothCountTextBox.TabIndex = 5;
@@ -112,7 +112,7 @@
             // 
             this.MinMaxToothCountLabel.AutoSize = true;
             this.MinMaxToothCountLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.MinMaxToothCountLabel.Location = new System.Drawing.Point(92, 210);
+            this.MinMaxToothCountLabel.Location = new System.Drawing.Point(92, 204);
             this.MinMaxToothCountLabel.Name = "MinMaxToothCountLabel";
             this.MinMaxToothCountLabel.Size = new System.Drawing.Size(65, 15);
             this.MinMaxToothCountLabel.TabIndex = 81;
@@ -122,7 +122,7 @@
             // 
             this.ToothHeightLabel.AutoSize = true;
             this.ToothHeightLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.ToothHeightLabel.Location = new System.Drawing.Point(12, 147);
+            this.ToothHeightLabel.Location = new System.Drawing.Point(12, 141);
             this.ToothHeightLabel.Name = "ToothHeightLabel";
             this.ToothHeightLabel.Size = new System.Drawing.Size(88, 15);
             this.ToothHeightLabel.TabIndex = 76;
@@ -132,7 +132,7 @@
             // 
             this.MinMaxToothHeightLabel.AutoSize = true;
             this.MinMaxToothHeightLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.MinMaxToothHeightLabel.Location = new System.Drawing.Point(92, 168);
+            this.MinMaxToothHeightLabel.Location = new System.Drawing.Point(92, 162);
             this.MinMaxToothHeightLabel.Name = "MinMaxToothHeightLabel";
             this.MinMaxToothHeightLabel.Size = new System.Drawing.Size(145, 15);
             this.MinMaxToothHeightLabel.TabIndex = 78;
@@ -142,7 +142,7 @@
             // 
             this.ThicknessLabel.AutoSize = true;
             this.ThicknessLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.ThicknessLabel.Location = new System.Drawing.Point(14, 105);
+            this.ThicknessLabel.Location = new System.Drawing.Point(14, 99);
             this.ThicknessLabel.Name = "ThicknessLabel";
             this.ThicknessLabel.Size = new System.Drawing.Size(131, 15);
             this.ThicknessLabel.TabIndex = 88;
@@ -152,7 +152,7 @@
             // 
             this.ThicknessTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.ThicknessTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.ThicknessTextBox.Location = new System.Drawing.Point(17, 123);
+            this.ThicknessTextBox.Location = new System.Drawing.Point(17, 117);
             this.ThicknessTextBox.Name = "ThicknessTextBox";
             this.ThicknessTextBox.Size = new System.Drawing.Size(56, 21);
             this.ThicknessTextBox.TabIndex = 3;
@@ -162,7 +162,7 @@
             // 
             this.MinMaxToothTgicknessLabel.AutoSize = true;
             this.MinMaxToothTgicknessLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.MinMaxToothTgicknessLabel.Location = new System.Drawing.Point(92, 126);
+            this.MinMaxToothTgicknessLabel.Location = new System.Drawing.Point(92, 120);
             this.MinMaxToothTgicknessLabel.Name = "MinMaxToothTgicknessLabel";
             this.MinMaxToothTgicknessLabel.Size = new System.Drawing.Size(67, 15);
             this.MinMaxToothTgicknessLabel.TabIndex = 90;
@@ -172,7 +172,7 @@
             // 
             this.OuterDiameterLabel.AutoSize = true;
             this.OuterDiameterLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.OuterDiameterLabel.Location = new System.Drawing.Point(12, 21);
+            this.OuterDiameterLabel.Location = new System.Drawing.Point(12, 15);
             this.OuterDiameterLabel.Name = "OuterDiameterLabel";
             this.OuterDiameterLabel.Size = new System.Drawing.Size(205, 15);
             this.OuterDiameterLabel.TabIndex = 82;
@@ -182,7 +182,7 @@
             // 
             this.InnerDiameterLabel.AutoSize = true;
             this.InnerDiameterLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.InnerDiameterLabel.Location = new System.Drawing.Point(12, 63);
+            this.InnerDiameterLabel.Location = new System.Drawing.Point(12, 57);
             this.InnerDiameterLabel.Name = "InnerDiameterLabel";
             this.InnerDiameterLabel.Size = new System.Drawing.Size(220, 15);
             this.InnerDiameterLabel.TabIndex = 83;
@@ -192,7 +192,7 @@
             // 
             this.InnerDiameterTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.InnerDiameterTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.InnerDiameterTextBox.Location = new System.Drawing.Point(17, 81);
+            this.InnerDiameterTextBox.Location = new System.Drawing.Point(17, 75);
             this.InnerDiameterTextBox.Name = "InnerDiameterTextBox";
             this.InnerDiameterTextBox.Size = new System.Drawing.Size(56, 21);
             this.InnerDiameterTextBox.TabIndex = 2;
@@ -202,7 +202,7 @@
             // 
             this.OuterDiameterTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.OuterDiameterTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.OuterDiameterTextBox.Location = new System.Drawing.Point(17, 39);
+            this.OuterDiameterTextBox.Location = new System.Drawing.Point(17, 33);
             this.OuterDiameterTextBox.Name = "OuterDiameterTextBox";
             this.OuterDiameterTextBox.Size = new System.Drawing.Size(56, 21);
             this.OuterDiameterTextBox.TabIndex = 1;
@@ -212,7 +212,7 @@
             // 
             this.MinMaxOuterDiameterLabel.AutoSize = true;
             this.MinMaxOuterDiameterLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.MinMaxOuterDiameterLabel.Location = new System.Drawing.Point(92, 41);
+            this.MinMaxOuterDiameterLabel.Location = new System.Drawing.Point(92, 35);
             this.MinMaxOuterDiameterLabel.Name = "MinMaxOuterDiameterLabel";
             this.MinMaxOuterDiameterLabel.Size = new System.Drawing.Size(81, 15);
             this.MinMaxOuterDiameterLabel.TabIndex = 86;
@@ -222,7 +222,7 @@
             // 
             this.MinMaxInnerDiameter.AutoSize = true;
             this.MinMaxInnerDiameter.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.MinMaxInnerDiameter.Location = new System.Drawing.Point(92, 83);
+            this.MinMaxInnerDiameter.Location = new System.Drawing.Point(92, 77);
             this.MinMaxInnerDiameter.Name = "MinMaxInnerDiameter";
             this.MinMaxInnerDiameter.Size = new System.Drawing.Size(81, 15);
             this.MinMaxInnerDiameter.TabIndex = 87;
@@ -232,7 +232,7 @@
             // 
             this.ToothHeightTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.ToothHeightTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.ToothHeightTextBox.Location = new System.Drawing.Point(17, 165);
+            this.ToothHeightTextBox.Location = new System.Drawing.Point(17, 159);
             this.ToothHeightTextBox.Name = "ToothHeightTextBox";
             this.ToothHeightTextBox.Size = new System.Drawing.Size(56, 21);
             this.ToothHeightTextBox.TabIndex = 4;
@@ -242,7 +242,7 @@
             // 
             this.ToothTopRadiusRatioLabel.AutoSize = true;
             this.ToothTopRadiusRatioLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.ToothTopRadiusRatioLabel.Location = new System.Drawing.Point(12, 241);
+            this.ToothTopRadiusRatioLabel.Location = new System.Drawing.Point(12, 228);
             this.ToothTopRadiusRatioLabel.Name = "ToothTopRadiusRatioLabel";
             this.ToothTopRadiusRatioLabel.Size = new System.Drawing.Size(225, 15);
             this.ToothTopRadiusRatioLabel.TabIndex = 92;
@@ -252,17 +252,17 @@
             // 
             this.ToothTopRadiusRatioTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.ToothTopRadiusRatioTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.ToothTopRadiusRatioTextBox.Location = new System.Drawing.Point(17, 258);
+            this.ToothTopRadiusRatioTextBox.Location = new System.Drawing.Point(17, 245);
             this.ToothTopRadiusRatioTextBox.Name = "ToothTopRadiusRatioTextBox";
             this.ToothTopRadiusRatioTextBox.Size = new System.Drawing.Size(56, 21);
-            this.ToothTopRadiusRatioTextBox.TabIndex = 91;
+            this.ToothTopRadiusRatioTextBox.TabIndex = 6;
             this.ToothTopRadiusRatioTextBox.Leave += new System.EventHandler(this.OnTextBoxLeave);
             // 
             // MinMaxToothTopRadiusRatioLabel
             // 
             this.MinMaxToothTopRadiusRatioLabel.AutoSize = true;
             this.MinMaxToothTopRadiusRatioLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.MinMaxToothTopRadiusRatioLabel.Location = new System.Drawing.Point(92, 260);
+            this.MinMaxToothTopRadiusRatioLabel.Location = new System.Drawing.Point(92, 247);
             this.MinMaxToothTopRadiusRatioLabel.Name = "MinMaxToothTopRadiusRatioLabel";
             this.MinMaxToothTopRadiusRatioLabel.Size = new System.Drawing.Size(59, 15);
             this.MinMaxToothTopRadiusRatioLabel.TabIndex = 93;
