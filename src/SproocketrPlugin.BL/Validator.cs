@@ -5,6 +5,7 @@
     /// </summary>
     public static class Validator
     {
+        //TODO: Зачем?
         /// <summary>
         /// Проверяет значение на корректность.
         /// </summary>

@@ -97,6 +97,7 @@
         /// </summary>
         private void ChangeMinMaxToothCountLabel()
         {
+            //TODO:
             var maxCount = _parameters.OuterDiameter * SproocketParameters.MAX_TOOTH_COUNT_FROM_OUTER_DIAMETER;
             if (maxCount > SproocketParameters.MAX_TOOTH_COUNT)
             {
@@ -151,14 +152,10 @@
             }
             catch (Exception e)
             {
-                if(e.InnerException != null)
-                {
-                    errorProvider.SetError(textBox, e.InnerException.Message);
-                }
-                else
-                {
-                    errorProvider.SetError(textBox, e.Message);
-                }
+                errorProvider.SetError(textBox, 
+                    e.InnerException != null 
+                    ? e.InnerException.Message 
+                    : e.Message);
             }
             finally
             {
@@ -207,6 +204,7 @@
 
         #endregion Methods
 
+        //TODO:
         private void MainForm_Load(object sender, EventArgs e)
         {
 

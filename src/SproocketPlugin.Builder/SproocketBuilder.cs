@@ -135,6 +135,7 @@
 
                     // Создание зуба.
                     var tooth = CreateTooth(toothHeight, thickness, toothTopRadiusRatio);
+                    //TODO: RSDN
                     //Поворот зуба
                     Matrix3d rotationYMatrix = Matrix3d.Rotation(Math.PI / 2, Vector3d.YAxis, Point3d.Origin);
                     tooth.TransformBy(rotationYMatrix);
@@ -199,6 +200,7 @@
         /// </summary>
         /// <param name="heigth">Высота зуба.</param>
         /// <param name="thickness">Толщина зуба.</param>
+        /// //TODO: RSDN
         /// <param name="topRadiusCoefficient">Коэффициент ширины верхнего радиуса от основания зуба.
         /// Значение по умолчанию равное 0.5, означает, что верхний радиус в два раза меньше основания.</param>
         /// <returns>Модель в виде <see cref="Solid3d"/>.</returns>
