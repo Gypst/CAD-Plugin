@@ -79,11 +79,11 @@
         /// <summary>
         /// Максимальное количество зубьев цепного колеса при заданных параметрах.
         /// </summary>
-        public double MaxToothCount
+        public int MaxToothCount
         {
             get
             {
-                var maxCount = OuterDiameter * MAX_TOOTH_COUNT_FROM_OUTER_DIAMETER;
+                var maxCount = Convert.ToInt32(OuterDiameter * MAX_TOOTH_COUNT_FROM_OUTER_DIAMETER);
                 if (maxCount > MAX_TOOTH_COUNT)
                 {
                     maxCount = MAX_TOOTH_COUNT;
