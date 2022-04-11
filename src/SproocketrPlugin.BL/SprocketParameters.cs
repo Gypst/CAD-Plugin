@@ -1,11 +1,11 @@
-﻿namespace SproocketPlugin.BL
+﻿namespace SprocketPlugin.BL
 {
     using System;
 
     /// <summary>
     /// Класс, в котором содержатся параметры для построения модели.
     /// </summary>
-    public class SproocketParameters
+    public class SprocketParameters
     {
         
         #region Constants
@@ -79,7 +79,7 @@
             get => _outerDiameter;
             set
             {
-                if (!Validator.ValidateValue(MIN_OUTER_DIAMETER,
+                if (!ValidateValue(MIN_OUTER_DIAMETER,
                     MAX_OUTER_DIAMETER, value))
                 {
                     throw new ArgumentException("Введено неверное "
@@ -98,9 +98,9 @@
             get => _innerDiameter;
             set
             {
-                if (!Validator.ValidateValue(MIN_INNER_DIAMETER,
+                if (!ValidateValue(MIN_INNER_DIAMETER,
                     MAX_INNER_FROM_OUTER_DIAMETER_MULTIPLIER * OuterDiameter, value) &&
-                    !Validator.ValidateValue(MIN_INNER_DIAMETER, MAX_INNER_DIAMETER, value))
+                    !ValidateValue(MIN_INNER_DIAMETER, MAX_INNER_DIAMETER, value))
                 {
                     throw new ArgumentException("Введено неверное "
                         + "значение внутреннего диаметра.");
@@ -118,7 +118,7 @@
             get => _thickness;
             set
             {
-                if (!Validator.ValidateValue(MIN_THICKNESS,
+                if (!ValidateValue(MIN_THICKNESS,
                     MAX_THICKNESS, value))
                 {
                     throw new ArgumentException("Введено неверное "
@@ -137,9 +137,9 @@
             get => _toothCount;
             set
             {
-                if (Validator.ValidateValue(MIN_TOOTH_COUNT,
+                if (ValidateValue(MIN_TOOTH_COUNT,
                     OuterDiameter * MAX_TOOTH_COUNT_FROM_OUTER_DIAMETER, value) && 
-                    Validator.ValidateValue(MIN_TOOTH_COUNT, MAX_TOOTH_COUNT, value))
+                    ValidateValue(MIN_TOOTH_COUNT, MAX_TOOTH_COUNT, value))
                 {
                     _toothCount = value;
 
@@ -160,7 +160,7 @@
             get => _toothHeight;
             set
             {
-                if (!Validator.ValidateValue(MIN_TOOTH_HEIGHT,
+                if (!ValidateValue(MIN_TOOTH_HEIGHT,
                     OuterDiameter * MAX_TOOTH_HEIGHT_FROM_OUTER_DIAMETER, value))
                 {
                 throw new ArgumentException("Введено неверное "
@@ -179,7 +179,7 @@
             get => _toothTopRadiusRatio;
             set
             {
-                if (!Validator.ValidateValue(MIN_TOOTH_TOP_RADIUS_RATIO, MAX_TOOTH_TOP_RADIUS_RATIO, value))
+                if (!ValidateValue(MIN_TOOTH_TOP_RADIUS_RATIO, MAX_TOOTH_TOP_RADIUS_RATIO, value))
                 {
                     throw new ArgumentException("Введено неверное "
                                                 + "значение коэффициента ширины верхнего радиуса.");
@@ -196,7 +196,7 @@
         /// <summary>
         /// Конструктор по умолчанию, задающий начальные значения параметров.
         /// </summary>
-        public SproocketParameters()
+        public SprocketParameters()
         {
             OuterDiameter = 80;
             InnerDiameter = 45;
@@ -204,6 +204,22 @@
             ToothCount = 6;
             ToothHeight = 10;
             ToothTopRadiusRatio = 0.5;
+        }
+
+        #endregion
+
+        #region Methods
+
+        /// <summary>
+        /// Проверяет значение на корректность.
+        /// </summary>
+        /// <param name="min">Минимальное значение параметра.</param>
+        /// <param name="max">Максимальное значение параметра.</param>
+        /// <param name="value">Проверяемое значение.</param>
+        /// <returns>Результат проверки.</returns>
+        public bool ValidateValue(double min, double max, double value)
+        {
+            return value <= max && value >= min;
         }
 
         #endregion

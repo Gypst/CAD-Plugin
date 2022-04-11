@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace SproocketPlugin.UI.Properties {
+namespace SprocketPlugin.UI.Properties {
     using System;
     
     

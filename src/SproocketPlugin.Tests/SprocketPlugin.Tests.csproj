@@ -48,7 +48,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="SproocketParametersTest.cs" />
+    <Compile Include="SprocketParametersTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ValidatorTest.cs" />
   </ItemGroup>
@@ -56,9 +56,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\SproocketrPlugin.BL\SproocketPlugin.BL.csproj">
+    <ProjectReference Include="..\SproocketrPlugin.BL\SprocketPlugin.BL.csproj">
       <Project>{08ca8ab3-1b8d-48c1-8589-7aa7a7f0cdb2}</Project>
-      <Name>SproocketPlugin.BL</Name>
+      <Name>SprocketPlugin.BL</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

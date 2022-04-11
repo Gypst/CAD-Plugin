@@ -1,4 +1,4 @@
-﻿namespace SproocketPlugin.Builder
+﻿namespace SprocketPlugin.Builder
 {
     using Autodesk.AutoCAD.ApplicationServices;
     using Autodesk.AutoCAD.DatabaseServices;
@@ -11,14 +11,14 @@
     /// <summary>
     /// Класс, отвеающий за построение модели.
     /// </summary>
-    public class SproocketBuilder
+    public class SprocketBuilder
     {
         #region Fields
 
         /// <summary>
         /// Параметры модели.
         /// </summary>
-        private SproocketParameters _parameters;
+        private SprocketParameters _parameters;
 
         #endregion Fields
 
@@ -28,7 +28,7 @@
         /// Конструктор класса.
         /// </summary>
         /// <param name="parameters">Параметры для построения модели.</param>
-        public SproocketBuilder(SproocketParameters parameters)
+        public SprocketBuilder(SprocketParameters parameters)
         {
             _parameters = parameters;
         }
@@ -94,8 +94,7 @@
         {
             var activeDocument = Application.DocumentManager.MdiActiveDocument;
             var database = activeDocument.Database;
-
-            var blockName = "Sproocket";
+            var blockName = "Sprocket";
 
             using (var documentLock = activeDocument.LockDocument())
             {

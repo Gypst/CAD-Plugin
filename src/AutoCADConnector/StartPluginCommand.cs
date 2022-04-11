@@ -1,14 +1,14 @@
 ﻿using Autodesk.AutoCAD.ApplicationServices;
 using Autodesk.AutoCAD.Runtime;
 using Microsoft.VisualBasic.Devices;
-using SproocketPlugin.BL;
-using SproocketPlugin.Builder;
+using SprocketPlugin.BL;
+using SprocketPlugin.Builder;
 
 [assembly: CommandClass(typeof(AutoCADConnector.StartPluginCommand))]
 
 namespace AutoCADConnector
 {
-    using SproocketPlugin.UI;
+    using SprocketPlugin.UI;
     using System.Diagnostics;
     using System.IO;
 
@@ -23,7 +23,7 @@ namespace AutoCADConnector
         [CommandMethod("CreateSproocket", CommandFlags.Modal)]
         public void StartCommand()
         {
-            Application.ShowModelessDialog(new MainForm());
+            Application.ShowModelessDialog(new SprocketForm());
         }
 
         /// <summary>
@@ -33,8 +33,8 @@ namespace AutoCADConnector
         [CommandMethod("StressTest", CommandFlags.Session)]
         public void StressTest()
         {
-            var gearParameters = new SproocketParameters();
-            var builder = new SproocketBuilder(gearParameters);
+            var gearParameters = new SprocketParameters();
+            var builder = new SprocketBuilder(gearParameters);
             var stopWatch = new Stopwatch();
             stopWatch.Start();
             var streamWriter = new StreamWriter($"log.txt", true);

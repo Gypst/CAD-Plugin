@@ -1,4 +1,4 @@
-﻿namespace SproocketPlugin.UI
+﻿namespace SprocketPlugin.UI
 {
     using BL;
     using Builder;
@@ -9,14 +9,14 @@
     /// <summary>
     /// Главная форма для создания модели.
     /// </summary>
-    public partial class MainForm : Form
+    public partial class SprocketForm : Form
     {
         #region Fields
 
         /// <summary>
         /// Параметры модели.
         /// </summary>
-        private SproocketParameters _parameters;
+        private SprocketParameters _parameters;
 
         /// <summary>
         /// Словарь с TextBox и соответствующими им именами параметров.
@@ -30,20 +30,20 @@
         /// <summary>
         /// Конструктор формы.
         /// </summary>
-        public MainForm()
+        public SprocketForm()
         {
             InitializeComponent();
 
-            _parameters = new SproocketParameters();
+            _parameters = new SprocketParameters();
 
             _texBoxDictionary = new Dictionary<TextBox, string>()
             {
-                { OuterDiameterTextBox, nameof(SproocketParameters.OuterDiameter) },
-                { InnerDiameterTextBox, nameof(SproocketParameters.InnerDiameter) },
-                { ThicknessTextBox,     nameof(SproocketParameters.Thickness) },
-                { ToothHeightTextBox,   nameof(SproocketParameters.ToothHeight) },
-                { ToothCountTextBox,    nameof(SproocketParameters.ToothCount) },
-                { ToothTopRadiusRatioTextBox,    nameof(SproocketParameters.ToothTopRadiusRatio) },
+                { OuterDiameterTextBox, nameof(SprocketParameters.OuterDiameter) },
+                { InnerDiameterTextBox, nameof(SprocketParameters.InnerDiameter) },
+                { ThicknessTextBox,     nameof(SprocketParameters.Thickness) },
+                { ToothHeightTextBox,   nameof(SprocketParameters.ToothHeight) },
+                { ToothCountTextBox,    nameof(SprocketParameters.ToothCount) },
+                { ToothTopRadiusRatioTextBox,    nameof(SprocketParameters.ToothTopRadiusRatio) },
             };
 
             InitState();
@@ -82,7 +82,7 @@
 
             CheckValueInTextBox((TextBox)sender, parameterName);
 
-            if (parameterName == nameof(SproocketParameters.OuterDiameter))
+            if (parameterName == nameof(SprocketParameters.OuterDiameter))
             {
                 ChangeMinMaxToothCountLabel();
                 ChangeMinMaxToothHeightLabel();
@@ -98,10 +98,10 @@
         private void ChangeMinMaxToothCountLabel()
         {
             //TODO:
-            var maxCount = _parameters.OuterDiameter * SproocketParameters.MAX_TOOTH_COUNT_FROM_OUTER_DIAMETER;
-            if (maxCount > SproocketParameters.MAX_TOOTH_COUNT)
+            var maxCount = _parameters.OuterDiameter * SprocketParameters.MAX_TOOTH_COUNT_FROM_OUTER_DIAMETER;
+            if (maxCount > SprocketParameters.MAX_TOOTH_COUNT)
             {
-                maxCount = SproocketParameters.MAX_TOOTH_COUNT;
+                maxCount = SprocketParameters.MAX_TOOTH_COUNT;
             }
 
             MinMaxToothCountLabel.Text = "(5 - " + (maxCount).ToString() + " шт)";
@@ -113,7 +113,7 @@
         private void ChangeMinMaxToothHeightLabel()
         {
             MinMaxToothHeightLabel.Text = "(До " + (_parameters.OuterDiameter *
-                SproocketParameters.MAX_TOOTH_HEIGHT_FROM_OUTER_DIAMETER).ToString() + " мм)";
+                SprocketParameters.MAX_TOOTH_HEIGHT_FROM_OUTER_DIAMETER).ToString() + " мм)";
         }
 
         /// <summary>
@@ -122,7 +122,7 @@
         private void ChangeMinMaxInnerDiameterLabel()
         {
             MinMaxInnerDiameter.Text = "(25 - " + (_parameters.OuterDiameter * 
-                SproocketParameters.MAX_INNER_FROM_OUTER_DIAMETER_MULTIPLIER)
+                SprocketParameters.MAX_INNER_FROM_OUTER_DIAMETER_MULTIPLIER)
                  + " мм)";
         }
 
@@ -137,9 +137,9 @@
             {
                 errorProvider.SetError(textBox, string.Empty);
 
-                var propertyInfo = typeof(SproocketParameters).
+                var propertyInfo = typeof(SprocketParameters).
                     GetProperty(propertyName);
-                if (propertyName == nameof(SproocketParameters.ToothCount))
+                if (propertyName == nameof(SprocketParameters.ToothCount))
                 {
                     propertyInfo.SetValue(_parameters,
                         int.Parse(textBox.Text));
@@ -198,16 +198,11 @@
         /// <param name="e"></param>
         private void BuildBtn_Click(object sender, EventArgs e)
         {
-            SproocketBuilder builder = new SproocketBuilder(_parameters);
+            SprocketBuilder builder = new SprocketBuilder(_parameters);
             builder.Build();
         }
 
         #endregion Methods
 
-        //TODO:
-        private void MainForm_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }

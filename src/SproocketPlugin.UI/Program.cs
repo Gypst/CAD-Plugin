@@ -1,4 +1,4 @@
-﻿namespace SproocketPlugin.UI
+﻿namespace SprocketPlugin.UI
 {
     using System;
     using System.Windows.Forms;
@@ -13,7 +13,7 @@
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainForm());
+            Application.Run(new SprocketForm());
         }
     }
 }
