@@ -72,6 +72,33 @@
         #region Properties
 
         /// <summary>
+        /// Максимальный внутренний диаметр цепного колеса при заданных параметрах.
+        /// </summary>
+        public double MaxInnerDiameter => OuterDiameter * MAX_INNER_FROM_OUTER_DIAMETER_MULTIPLIER;
+
+        /// <summary>
+        /// Максимальное количество зубьев цепного колеса при заданных параметрах.
+        /// </summary>
+        public double MaxToothCount
+        {
+            get
+            {
+                var maxCount = OuterDiameter * MAX_TOOTH_COUNT_FROM_OUTER_DIAMETER;
+                if (maxCount > MAX_TOOTH_COUNT)
+                {
+                    maxCount = MAX_TOOTH_COUNT;
+                }
+                return maxCount;
+            }
+        }
+
+        /// <summary>
+        /// Максимальная высота зубьев цепного колеса при заданных параметрах.
+        /// </summary>
+        public double MaxToothHeight => OuterDiameter * MAX_TOOTH_HEIGHT_FROM_OUTER_DIAMETER;
+
+
+        /// <summary>
         /// Внешний диаметр.
         /// </summary>
         public double OuterDiameter
@@ -98,9 +125,8 @@
             get => _innerDiameter;
             set
             {
-                if (!ValidateValue(MIN_INNER_DIAMETER,
-                    MAX_INNER_FROM_OUTER_DIAMETER_MULTIPLIER * OuterDiameter, value) &&
-                    !ValidateValue(MIN_INNER_DIAMETER, MAX_INNER_DIAMETER, value))
+                if (!ValidateValue(MIN_INNER_DIAMETER, MaxInnerDiameter, value) 
+                    && !ValidateValue(MIN_INNER_DIAMETER, MAX_INNER_DIAMETER, value))
                 {
                     throw new ArgumentException("Введено неверное "
                         + "значение внутреннего диаметра.");
@@ -137,9 +163,7 @@
             get => _toothCount;
             set
             {
-                if (ValidateValue(MIN_TOOTH_COUNT,
-                    OuterDiameter * MAX_TOOTH_COUNT_FROM_OUTER_DIAMETER, value) && 
-                    ValidateValue(MIN_TOOTH_COUNT, MAX_TOOTH_COUNT, value))
+                if (ValidateValue(MIN_TOOTH_COUNT, MaxToothCount, value))
                 {
                     _toothCount = value;
 
@@ -160,8 +184,7 @@
             get => _toothHeight;
             set
             {
-                if (!ValidateValue(MIN_TOOTH_HEIGHT,
-                    OuterDiameter * MAX_TOOTH_HEIGHT_FROM_OUTER_DIAMETER, value))
+                if (!ValidateValue(MIN_TOOTH_HEIGHT, MaxToothHeight, value))
                 {
                 throw new ArgumentException("Введено неверное "
                         + "значение высоты зуба.");

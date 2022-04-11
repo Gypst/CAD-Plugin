@@ -133,14 +133,20 @@
                         new Point3d(0, 0, thickness / 2) - Point3d.Origin));
 
                     // Создание зуба.
-                    var tooth = CreateTooth(toothHeight, thickness, toothTopRadiusRatio);
+                    var tooth = CreateTooth(toothHeight, 
+                                                    thickness, 
+                                                    toothTopRadiusRatio);
                     //TODO: RSDN
                     //Поворот зуба
-                    Matrix3d rotationYMatrix = Matrix3d.Rotation(Math.PI / 2, Vector3d.YAxis, Point3d.Origin);
+                    Matrix3d rotationYMatrix = Matrix3d.Rotation(Math.PI / 2, 
+                                                                 Vector3d.YAxis, 
+                                                                 Point3d.Origin);
                     tooth.TransformBy(rotationYMatrix);
                     tooth.TransformBy(Matrix3d.Displacement(
-                        new Point3d(outerRadius + toothHeight / 2, 0, thickness / 2)
-                        - Point3d.Origin));
+                                          new Point3d(outerRadius + toothHeight / 2, 
+                                                      0, 
+                                                      thickness / 2)
+                                          - Point3d.Origin));
 
                     //Размножение зубьев круговым массивом
                     body = ApplyPolarArrayOnBody(body, toothCount, tooth);
@@ -170,7 +176,8 @@
         }
 
         /// <summary>
-        /// Создает тело <see cref="Solid3d"/> цепного колеса (заготовка без зубьев).
+        /// Создает тело <see cref="Solid3d"/> цепного колеса
+        /// (заготовка без зубьев).
         /// </summary>
         /// <param name="outerRadius">Внешний радиус цепного колеса.</param>
         /// <param name="innerRadius">Внутренний радиус цепного колеса.</param>
@@ -200,8 +207,10 @@
         /// <param name="heigth">Высота зуба.</param>
         /// <param name="thickness">Толщина зуба.</param>
         /// //TODO: RSDN
-        /// <param name="topRadiusCoefficient">Коэффициент ширины верхнего радиуса от основания зуба.
-        /// Значение по умолчанию равное 0.5, означает, что верхний радиус в два раза меньше основания.</param>
+        /// <param name="topRadiusCoefficient">Коэффициент ширины верхнего
+        /// радиуса от основания зуба.
+        /// Значение по умолчанию равное 0.5, означает, что верхний радиус
+        /// в два раза меньше основания.</param>
         /// <returns>Модель в виде <see cref="Solid3d"/>.</returns>
         private Solid3d CreateTooth(double heigth, 
             double thickness, double topRadiusCoefficient = 0.5)
@@ -213,18 +222,24 @@
 
             var model = new Solid3d();
             model.SetDatabaseDefaults();
-            model.CreatePyramid(heigth, sidesNumber, bottomRadius, topRadius);
+            model.CreatePyramid(heigth, sidesNumber, bottomRadius, 
+                                topRadius);
 
             return model;
         }
 
         /// <summary>
-        /// Создает элементы круговым массивом и соединяет их с базовым объектом в единую модель.
+        /// Создает элементы круговым массивом и соединяет их с базовым
+        /// объектом в единую модель.
         /// </summary>
-        /// <param name="body">Базовая модель для трансформации (звёздочка без зубьев).</param>
-        /// <param name="elementsCount">Количесвто элементов для построения (количство зубьев).</param>
-        /// <param name="element">Повторяющийся элемент для круг-массива (зуб).</param>
-        /// <returns>Модель с круг-массивом из эелементов (зубчатое колесо с зубами).</returns>
+        /// <param name="body">Базовая модель для трансформации
+        /// (звёздочка без зубьев).</param>
+        /// <param name="elementsCount">Количесвто элементов для построения
+        /// (количство зубьев).</param>
+        /// <param name="element">Повторяющийся элемент для круг-массива
+        /// (зуб).</param>
+        /// <returns>Модель с круг-массивом из эелементов
+        /// (зубчатое колесо с зубами).</returns>
         private Solid3d ApplyPolarArrayOnBody(Solid3d body, 
             int elementsCount, Solid3d element)
         {

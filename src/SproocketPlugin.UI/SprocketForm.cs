@@ -98,13 +98,8 @@
         private void ChangeMinMaxToothCountLabel()
         {
             //TODO:
-            var maxCount = _parameters.OuterDiameter * SprocketParameters.MAX_TOOTH_COUNT_FROM_OUTER_DIAMETER;
-            if (maxCount > SprocketParameters.MAX_TOOTH_COUNT)
-            {
-                maxCount = SprocketParameters.MAX_TOOTH_COUNT;
-            }
-
-            MinMaxToothCountLabel.Text = "(5 - " + (maxCount).ToString() + " шт)";
+            MinMaxToothCountLabel.Text = "(5 - " + _parameters.MaxToothCount 
+                                                 + " шт)";
         }
 
         /// <summary>
@@ -112,8 +107,8 @@
         /// </summary>
         private void ChangeMinMaxToothHeightLabel()
         {
-            MinMaxToothHeightLabel.Text = "(До " + (_parameters.OuterDiameter *
-                SprocketParameters.MAX_TOOTH_HEIGHT_FROM_OUTER_DIAMETER).ToString() + " мм)";
+            MinMaxToothHeightLabel.Text = "(До " + _parameters.MaxToothHeight 
+                                                 + " мм)";
         }
 
         /// <summary>
@@ -121,9 +116,8 @@
         /// </summary>
         private void ChangeMinMaxInnerDiameterLabel()
         {
-            MinMaxInnerDiameter.Text = "(25 - " + (_parameters.OuterDiameter * 
-                SprocketParameters.MAX_INNER_FROM_OUTER_DIAMETER_MULTIPLIER)
-                 + " мм)";
+            MinMaxInnerDiameter.Text = "(25 - " + _parameters.MaxInnerDiameter 
+                                                + " мм)";
         }
 
         /// <summary>
